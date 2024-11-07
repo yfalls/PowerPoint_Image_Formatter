@@ -1,6 +1,7 @@
 
 # to run locally on terminal use: python -m streamlit run presentation_creator_app1.py
 
+
 import streamlit as st
 from pptx import Presentation
 from pptx.util import Inches, Emu
@@ -72,13 +73,13 @@ def create_widescreen_presentation_with_images(output_path, images, crop_left=0,
             st.write(f"Could not add image '{image}': {e}")
 
     prs.save(output_path)
-    st.success("Presentation created successfully!")
+    st.success("Presentation created successfully! Don't forget to download it!")
 
 st.title("PowerPoint Image Formatter")
 
 # ZIP file uploader
 uploaded_zip = st.file_uploader("Upload a ZIP file containing images", type=["zip"])
-output_file_name = st.text_input("Specify Output PowerPoint File Name", value="output_presentation.pptx")
+output_file_name = st.text_input("Specify Output PowerPoint File Name, or leave it as is to use the default", value="output_presentation.pptx")
 crop_left = st.number_input("Crop Pixels from Left", min_value=0, max_value=1000, value=250, step=10)
 crop_bottom = st.number_input("Crop Pixels from Bottom", min_value=0, max_value=1000, value=42, step=10)
 new_height_inches = st.number_input("New Height in Inches", min_value=1.0, max_value=10.0, value=6.0, step=0.5)
