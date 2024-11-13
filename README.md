@@ -2,4 +2,4 @@
 
 This is the first iteration before feedback
 
-git status test
+I added a new branch called feature-open
